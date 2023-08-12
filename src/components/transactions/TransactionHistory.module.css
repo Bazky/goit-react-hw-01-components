@@ -1,0 +1,41 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.table {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  width: 600px;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 1px 2px 5px 0px rgba(0, 0, 0, 1);
+  font-size: 20px;
+}
+
+.thead {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 600px;
+  height: 50px;
+  color: rgb(255, 255, 255);
+  background-color: rgb(51, 146, 234);
+}
+
+.trow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  gap: 100px;
+}
+
+.trow:nth-child(even) {
+  width: 600px;
+  height: 50px;
+  background-color: rgb(215, 215, 215);
+}
