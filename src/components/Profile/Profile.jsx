@@ -1,7 +1,7 @@
-import user from './user.json';
 import css from './Profile.module.css';
+import PropTypes from 'prop-types';
 
-export const Profile = () => {
+export const Profile = ({ user }) => {
   return (
     <div className={css.container}>
       <div className={css.profile}>
@@ -29,4 +29,17 @@ export const Profile = () => {
       </div>
     </div>
   );
+};
+Profile.propTypes = {
+  user: PropTypes.shape({
+    avatar: PropTypes.string.isRequired,
+    username: PropTypes.string.isRequired,
+    tag: PropTypes.string.isRequired,
+    location: PropTypes.string.isRequired,
+    stats: PropTypes.shape({
+      followers: PropTypes.number.isRequired,
+      views: PropTypes.number.isRequired,
+      likes: PropTypes.number.isRequired,
+    }).isRequired,
+  }).isRequired,
 };

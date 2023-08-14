@@ -1,11 +1,12 @@
 import css from './Statistics.module.css';
+import PropTypes from 'prop-types';
+import React from 'react';
 
 export const Statistics = ({ title, stats }) => {
   return (
     <div className={css.container}>
       <section className={css.statistics}>
-        <h2 className={css.title}>{title}</h2>
-
+        {title && <h2 className={css.title}>{title}</h2>}
         <ul className={css.list}>
           {stats.map(stat => (
             <li className={css.item} key={stat.id}>
@@ -17,4 +18,14 @@ export const Statistics = ({ title, stats }) => {
       </section>
     </div>
   );
+};
+Statistics.propTypes = {
+  title: PropTypes.string,
+  stats: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string.isRequired,
+      label: PropTypes.string.isRequired,
+      percentage: PropTypes.number.isRequired,
+    })
+  ).isRequired,
 };
